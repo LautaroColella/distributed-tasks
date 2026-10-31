@@ -36,29 +36,6 @@ API REST desarrollada con Python y Flask para gestionar usuarios y tareas, utili
 - Persistencia de datos con SQLite.
 - Página HTML con la documentación de la API.
 
-## Capturas de pantalla
+## Diagrama del sistema
 
-![Bienvenida](screenshoots/bienvenida.PNG)
-![Autenticado](screenshoots/autenticado.PNG)
-![Listar tareas](screenshoots/listar_tareas_exito.PNG)
-![Tarea creada](screenshoots/tarea_creada_exito.PNG)
-![Tarea eliminada](screenshoots/tarea_eliminada_exito.PNG)
-![Editar tarea](screenshoots/tarea_editar_exito.PNG)
-![Login](screenshoots/login_exito.PNG)
-![Logout](screenshoots/logout_exito.PNG)
-![Registro](screenshoots/registro_exito.PNG)
-![Usuarios](screenshoots/tabla_usuarios.PNG)
-![Sesiones](screenshoots/tabla_sesiones.PNG)
-
-Más capturas de las pruebas se encuentran en la carpeta `screenshoots`.
-
-## ¿Por qué hashear contraseñas?
-
-Para aumentar la dificultad de comprometer a muchos usuarios al mismo tiempo en caso de que se filtre la base de datos. Si las contraseñas están hasheadas y salteadas entonces un atacante debe usar rainbow tables, lo que toma un tiempo infeasible.
-
-## Ventajas de usar SQLite en este proyecto
-
-- Facil de usar.
-- Rápido y ligero.
-- Ideal para aplicaciones pequeñas.
-- Integración con python excelente.
+![Diagrama](./diagrama.jpeg)
