@@ -1,41 +1,51 @@
-# Sistema de Gestión de Tareas con API y Base de Datos
+# Sistema Distribuido de Procesamiento de Tareas
 
 ## Descripción
 
-API REST desarrollada con Python y Flask para gestionar usuarios y tareas, utilizando SQLite para la persistencia de datos y Argon2 para proteger las contraseñas mediante hashing.
+Sistema distribuido desarrollado en Python que permite recibir tareas de clientes mediante sockets TCP y distribuirlas entre múltiples workers utilizando un pool de hilos.
+
+El servidor acepta conexiones de clientes de forma concurrente, recibe tareas en formato JSON, las asigna a los workers disponibles y devuelve los resultados al cliente correspondiente.
 
 ## Tecnologías
 
 - Python
-- Flask
-- SQLite
-- Argon2
+- Socket (TCP)
+- Threading
+- Concurrent Futures (`ThreadPoolExecutor`)
+- JSON
 
-## Instalación y ejecución
+## Ejecución
 
-1. Instalar las dependencias:
-
-   ```bash
-   pip install Flask argon2-cffi
-   ```
-
-2. Ejecutar el servidor:
+1. Ejecutar el servidor:
 
    ```bash
    python servidor.py
    ```
 
-3. Abrir http://127.0.0.1:5000/tareas para consultar la página de bienvenida y la documentación de los endpoints.
+2. Ejecutar el cliente:
+
+   ```bash
+   python cliente.py
+   ```
 
 ## Funcionalidades
 
-- Registro de usuarios e inicio de sesión.
-- Hashing de contraseñas con Argon2.
-- Autenticación mediante tokens de sesión.
-- Operaciones CRUD sobre tareas.
-- Persistencia de datos con SQLite.
-- Página HTML con la documentación de la API.
+- Comunicación entre clientes y servidor mediante sockets TCP.
+- Recepción y envío de tareas en formato JSON.
+- Manejo concurrente de múltiples conexiones de clientes mediante threads.
+- Distribución de tareas entre workers utilizando ThreadPoolExecutor.
+- Procesamiento de tareas mediante un pool de hilos.
+- Devolución de resultados al cliente correspondiente.
+- Gestión del cierre de conexiones y errores de comunicación.
 
-## Diagrama del sistema
+## Diagrama del sistema a finalizar y capturas de ejecución
 
-![Diagrama](./diagrama.jpeg)
+![Diagrama](screenshoots/diagrama.jpeg)
+
+---
+
+![Servidor](screenshoots/servidor.PNG)
+
+---
+
+![Cliente](screenshoots/cliente.PNG)
